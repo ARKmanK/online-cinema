@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { Search, CircleUser } from 'lucide-react'
 
 type TypeLinks = [string, string][]
 
 const links: TypeLinks = [
-	['Главная', 'MainPage'],
+	['Главная', 'HomePage'],
 	['ТВ-каналы', 'TWPage'],
 	['Музыка', 'MusicPage'],
 	['Фильмы', 'FilmsPage'],
@@ -19,14 +19,25 @@ const links: TypeLinks = [
 
 const NavBar = () => {
 	const navigate = useNavigate()
+	const location = useLocation()
+
+	const isActive = (link: string) =>
+		location.pathname === `/${link}` || (link === 'HomePage' && location.pathname === '/')
 
 	return (
 		<>
 			<nav className='w-full h-full flex items-center justify-around font-bold text-lg'>
-				<ul className='flex items-center gap-x-8.5 text-white mb-0.5'>
+				<ul className='flex items-center gap-x-1 text-white mb-0.5'>
 					{links.map(([name, link]) => (
 						<li key={name}>
-							<button className='' onClick={() => navigate(`/${link}`)}>
+							<button
+								className={`px-4 py-2 rounded-3xl bg-black ${
+									isActive(link)
+										? 'hover:bg-none border-2 border-white bg-white text-black'
+										: 'hover:bg-gray-800/55'
+								} `}
+								onClick={() => navigate(`/${link}`)}
+							>
 								{name}
 							</button>
 						</li>

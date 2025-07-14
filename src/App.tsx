@@ -1,6 +1,7 @@
 import HomePage from '@pages/HomePage'
+import PageNotFound from '@pages/PageNotFound'
 import { FC } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { MantineProvider } from '@mantine/core'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
@@ -11,13 +12,16 @@ const App: FC = () => {
 		[
 			{
 				path: '/',
+				element: <Navigate to='/HomePage' replace />,
+				errorElement: <PageNotFound />,
+			},
+			{
+				path: '/HomePage',
 				element: <HomePage />,
-				errorElement: <>404</>,
 			},
 			{
 				path: '/login',
 				element: <></>,
-				errorElement: <>404</>,
 			},
 		],
 		{
