@@ -4,6 +4,7 @@ import { FC } from 'react'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { MantineProvider } from '@mantine/core'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import FilmsPage from './components/pages/FilmsPage'
 
 const queryClient = new QueryClient()
 
@@ -18,6 +19,10 @@ const App: FC = () => {
 			{
 				path: '/HomePage',
 				element: <HomePage />,
+			},
+			{
+				path: '/FilmsPage',
+				element: <FilmsPage />,
 			},
 			{
 				path: '/login',
