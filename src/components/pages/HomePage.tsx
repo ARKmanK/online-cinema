@@ -49,7 +49,7 @@ const HomePage = () => {
 							{[...Array(5)].map((_, index) => (
 								<div key={index} className='w-90 h-90 bg-gray-800 rounded-4xl overflow-hidden'>
 									<img
-										src={`/public/images_cut_1/image_part_00${index + 1}.jpg`}
+										src={`/images_cut_1/image_part_00${index + 1}.jpg`}
 										alt={`Image ${index + 1}`}
 										className='w-full h-full object-cover'
 									/>
