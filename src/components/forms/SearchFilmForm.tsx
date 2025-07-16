@@ -1,5 +1,5 @@
 import { X } from 'lucide-react'
-import { useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 
 const genres = [
 	{ value: 'anime', label: 'Аниме' },
@@ -31,12 +31,12 @@ const SearchFilmForm = () => {
 	const [country, setCountry] = useState('all')
 	const [access, setAccess] = useState('all')
 
-	const handleClick = () => {
+	const handleClick = useCallback(() => {
 		setGenre('')
 		setYear('all')
 		setCountry('all')
 		setAccess('all')
-	}
+	}, [])
 
 	return (
 		<div className='w-full bg-[#141414] rounded-3xl py-15 px-9 h-[300px] flex flex-col justify-between'>

@@ -1,7 +1,7 @@
 import Header from '@components/UI/Header'
 import Footer from '../UI/Footer'
 
-const HomePage = () => {
+const PageNotFound = () => {
 	return (
 		<>
 			<Header />
@@ -15,4 +15,4 @@ const HomePage = () => {
 	)
 }
 
-export default HomePage
+export default PageNotFound
