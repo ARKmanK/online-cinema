@@ -1,6 +1,7 @@
 import NavBar from '@components/UI/NavBar'
 import logo_1 from '/wink_logo-1.png'
 import logo_2 from '/wink_logo-2.png'
+import { memo } from 'react'
 
 const Header = () => {
 	return (
@@ -16,4 +17,4 @@ const Header = () => {
 	)
 }
 
-export default Header
+export default memo(Header)
